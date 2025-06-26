@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Bamboo Toothbrush",
+    "image": "assets/images/bamboo_toothbrush.jpg",
+    "ecoScore": 15,
+    "category": "Personal Care",
+    "description": "An eco-friendly alternative to plastic toothbrushes."
+  },
+  {
+    "name": "Reusable Shopping Bag",
+    "image": "assets/images/reusable_bag.jpg",
+    "ecoScore": 20,
+    "category": "Household",
+    "description": "Durable and washable bag made from recycled cotton."
+  },
+  {
+    "name": "Compost Bin",
+    "image": "assets/images/compost_bin.jpg",
+    "ecoScore": 30,
+    "category": "Kitchen",
+    "description": "Turn kitchen scraps into rich compost for your plants."
+  },
+  {
+    "name": "Organic Cotton T-Shirt",
+    "image": "assets/images/organic_tshirt.jpg",
+    "ecoScore": 25,
+    "category": "Fashion",
+    "description": "Soft, sustainable, and stylish for the planet-conscious."
+  }
+]

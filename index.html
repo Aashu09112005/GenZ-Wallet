@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GenZ Wallet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- 🌱 Hero Section -->
+<header class="main-header">
+  <div class="header-left">
+    <img src="assets/icons/weblogo.jpg" alt="GenZ Wallet Logo" class="logo" />
+    <div class="brand-text">
+      <h1><b>GenZ Wallet 💳🌱 </b></h1>
+      <p class="tagline">Earn Green by Going Green.</p>
+    </div>
+  </div>
+  <nav class="top-nav">
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <a href="#about">About</a>
+  <a href="#product-container">Products</a>
+  <a href="#eco-store">Eco Store</a>
+  <a href="#contact">Contact</a>
+  <button class="close-btn" onclick="toggleSidebar()">✖</button>
+</div>
+
+<!-- Menu Icon in Header -->
+<button class="menu-icon" onclick="toggleSidebar()">☰</button>
+
+
+  <div class="login-info" id="user-area" style="display: none;">
+    <p id="user-greeting">Hi, 👋</p>
+    <button onclick="logoutUser()">Logout</button>
+  </div>
+</header>
+
+<!-- 📚 About Section -->
+<section class="about-section">
+  <h2>About GenZ Wallet</h2>
+  <p>
+    GenZ Wallet is more than just a shopping tool — it's a movement.
+    We empower conscious consumers to track their impact, earn eco points, and build a greener tomorrow with every purchase.
+  </p>
+</section>
+
+<!-- 🧾 Wallet Summary -->
+<section id="wallet-summary">
+  <div class="summary-card">
+    <label class="privacy-switch">
+      <input type="checkbox" id="privacy-mode" checked />
+      Privacy Mode (Anonymous Browsing)
+    </label>
+    <h2>Your Eco Points: <span id="eco-points">0</span> 🌿</h2>
+    <h3>Your Badge: <span id="badge">🌱 Newbie</span></h3>
+  </div>
+</section>
+
+<!-- 📦 How It Works -->
+<section class="how-it-works">
+  <h2>📦 How GenZ Wallet Works</h2>
+  <div class="steps">
+    <div><h3>1️⃣ Shop</h3><p>Choose sustainable products you love.</p></div>
+    <div><h3>2️⃣ Earn</h3><p>Receive eco points for every purchase.</p></div>
+    <div><h3>3️⃣ Redeem</h3><p>Use points for rewards or impact.</p></div>
+  </div>
+</section>
+
+<!-- 🌍 Join the Movement -->
+<section class="hero-section">
+  <h2>Join the Green Revolution 🌍</h2>
+  <p>Get rewarded for making sustainable shopping choices. Earn eco points, unlock badges, and track your impact.</p>
+  <a href="#product-container"><button class="cta-button">Start Earning Eco Points</button></a>
+</section>
+
+<!-- 📊 Eco Stats -->
+<section class="eco-stats">
+  <div class="stat-box">
+    <h3 id="user-count">0</h3>
+    <p>Eco Users</p>
+  </div>
+  <div class="stat-box">
+    <h3 id="product-count">0</h3>
+    <p>Green Products</p>
+  </div>
+  <div class="stat-box">
+    <h3 id="points-earned">0</h3>
+    <p>Points Earned</p>
+  </div>
+</section>
+
+<!-- 🔔 What's New -->
+<section class="announcements">
+  <h2>🔔 What's New</h2>
+  <ul>
+    <li>🌿 Eco Store launched! Redeem your points now.</li>
+    <li>🔥 June Leaderboard reset. New prizes up for grabs.</li>
+    <li>🆕 New badges: "Eco Warrior" and "Green Guru"</li>
+  </ul>
+</section>
+
+<!-- 📈 Eco Dashboard -->
+<section id="eco-impact-dashboard">
+  <h2>📈 Your Eco Impact Dashboard</h2>
+  <div class="chart-card">
+    <canvas id="impactChart"></canvas>
+  </div>
+  <div class="chart-card">
+    <canvas id="categoryChart"></canvas>
+  </div>
+</section>
+
+<!-- 🔍 Product Search -->
+<div class="search-bar-container">
+  <input type="text" id="product-search" placeholder="🔍 Search sustainable products..." />
+  <button class="search-button">Search</button>
+</div>
+
+<!-- 🛒 Product Listings -->
+<main>
+  <div id="product-container" class="product-list"></div>
+</main>
+
+<!-- 🛍️ Featured Products Carousel -->
+<section class="featured-products">
+  <h2>🛍️ Featured Eco Products</h2>
+  <div class="carousel">
+    <div class="carousel-track" id="carousel-track"></div>
+  </div>
+</section>
+
+<!-- 🎁 Eco Store -->
+<section class="eco-store" id="eco-store">
+  <h2>🎁 Eco Store — Redeem Your Points</h2>
+  <div class="store-grid" id="store-grid"></div>
+</section>
+
+<!-- 🏅 Achievements -->
+<section class="achievements">
+  <h2>🏅 Your Achievements</h2>
+  <ul>
+    <li>🌱 First Purchase Made</li>
+    <li>💯 Crossed 100 Eco Points</li>
+    <li>♻️ Logged 3+ Sustainable Categories</li>
+  </ul>
+</section>
+
+<!-- 💬 Quote -->
+<section class="eco-quote" id="quote-box">
+  <blockquote id="quote-text">Loading quote...</blockquote>
+  <p id="quote-author"></p>
+</section>
+
+<!-- ♻️ Inspiration Strip -->
+<section class="eco-strip">
+  <p>♻️ Keep going! Every sustainable choice adds up to a greener future.</p>
+</section>
+
+<!-- 📲 Share Section -->
+<section class="share-section">
+  <h2>📲 Share GenZ Wallet</h2>
+  <div class="share-buttons">
+    <a href="https://wa.me/?text=Check%20out%20GenZ%20Wallet!%20https://genzwallet.web.app" target="_blank">WhatsApp</a>
+    <a href="https://twitter.com/intent/tweet?text=Check%20out%20GenZ%20Wallet!%20https://genzwallet.web.app" target="_blank">Twitter/X</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://genzwallet.web.app" target="_blank">LinkedIn</a>
+    <button onclick="copyLink()">📋 Copy Link</button>
+  </div>
+</section>
+
+<!-- 📬 Contact Us -->
+<section class="contact-us">
+  <h2>📬 Get in Touch</h2>
+  <p>Have feedback, ideas, or want to collaborate? Drop us a message!</p>
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <textarea placeholder="Your Message" rows="4" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- 💬 Testimonial Box -->
+<section class="testimonials">
+  <div class="testimonial-box">
+    <p>"GenZ Wallet made sustainability rewarding. I love tracking my impact!"</p>
+    <span>- Aanya, Mumbai 🌱</span>
+  </div>
+</section>
+
+<!-- 🧾 Footer -->
+<footer class="main-footer">
+  <div class="footer-cols">
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="profile.html">👤 Profile</a></li>
+        <li><a href="leaderboard.html">🏆 Leaderboard</a></li>
+        <li><a href="#eco-store">🎁 Eco Store</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>Email: ashwin.work1720@gmail.com</p>
+      <p>Instagram: @genzwallet</p>
+      <p>📍 Mumbai, India</p>
+    </div>
+  </div>
+  <hr />
+  <p style="text-align: center;">© 2025 GenZ Wallet. All rights reserved.</p>
+</footer>
+
+
+<!-- 🔌 Scripts -->
+<script type="module" src="firebase.js"></script>
+<script type="module" src="app.js"></script>
+<script type="module" src="dashboard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  function copyLink() {
+    navigator.clipboard.writeText("https://genzwallet.web.app");
+    alert("🔗 Link copied to clipboard!");
+  }
+</script>
+<script>
+  const featuredProducts = [
+    { name: "Bamboo Toothbrush", image: "assets/images/bamboo_toothbrush.jpg" },
+    { name: "Organic T-Shirt", image: "assets/images/organic_tshirt.jpg" },
+    { name: "Compost Bin", image: "assets/images/compost_bin.jpg" },
+    { name: "Reusable Bag", image: "assets/images/reusable_bag.jpg" },
+  ];
+  const carouselTrack = document.getElementById("carousel-track");
+  featuredProducts.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "carousel-card";
+    card.innerHTML = `<img src="${p.image}" alt="${p.name}" /><p>${p.name}</p>`;
+    carouselTrack.appendChild(card);
+  });
+
+  const storeItems = [
+    { name: "₹50 Coupon", cost: 50 },
+    { name: "Plant a Tree", cost: 75 },
+    { name: "Eco Warrior Badge", cost: 100 }
+  ];
+  const storeGrid = document.getElementById("store-grid");
+  storeItems.forEach(item => {
+    const box = document.createElement("div");
+    box.className = "reward-card";
+    box.innerHTML = `<h3>${item.name}</h3><p>Cost: ${item.cost} 🌿</p><button>Redeem</button>`;
+    box.querySelector("button").addEventListener("click", () => {
+      alert(`✅ You redeemed: ${item.name}`);
+    });
+    storeGrid.appendChild(box);
+  });
+</script>
+<script>
+  function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>
