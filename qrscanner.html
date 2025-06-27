@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Scanner | GenZ Wallet</title>
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f3fff5;
+      padding: 2rem;
+      text-align: center;
+    }
+    #qr-reader {
+      width: 300px;
+      margin: auto;
+    }
+    #message {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h2>📲 Scan QR to Redeem Eco Points</h2>
+  <div id="qr-reader"></div>
+  <p id="message">Awaiting scan...</p>
+
+  <script>
+    function updateEcoPoints(pointsToAdd) {
+      let ecoPoints = parseInt(localStorage.getItem("ecoPoints")) || 0;
+      ecoPoints += pointsToAdd;
+      localStorage.setItem("ecoPoints", ecoPoints);
+    }
+
+    function onScanSuccess(decodedText, decodedResult) {
+      // Assume QR code contains just a number: e.g. "10" means 10 points
+      const points = parseInt(decodedText);
+      if (!isNaN(points)) {
+        updateEcoPoints(points);
+        document.getElementById("message").textContent = `✅ Added ${points} Eco Points!`;
+      } else {
+        document.getElementById("message").textContent = `❌ Invalid QR Code`;
+      }
+
+      html5QrcodeScanner.clear();
+    }
+
+    const html5QrcodeScanner = new Html5QrcodeScanner(
+      "qr-reader", { fps: 10, qrbox: 250 });
+
+    html5QrcodeScanner.render(onScanSuccess);
+  </script>
+</body>
+</html>

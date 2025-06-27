@@ -1,11 +1,10 @@
 node_modules
-*.log
 *.sh
 *.exe
 *.bat
 *.zip
+*.log
 *.md
-.git
-.vscode
+*.json
+firebase.json
 firebase-debug.log
-package-lock.json

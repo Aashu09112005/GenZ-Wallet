@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leaderboard | GenZ Wallet</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f9f5;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      color: #2e7d32;
+    }
+    table {
+      width: 80%;
+      margin: auto;
+      border-collapse: collapse;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      background: #ffffff;
+    }
+    th, td {
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #c8e6c9;
+      color: #1b5e20;
+    }
+    tr:hover {
+      background-color: #f1f8e9;
+    }
+    .back-button {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .back-button a {
+      padding: 0.7rem 1.4rem;
+      background-color: #43a047;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌍 Eco Warrior Leaderboard</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>User</th>
+        <th>Eco Points</th>
+      </tr>
+    </thead>
+    <tbody id="leaderboard-data">
+      <!-- JS will inject rows here -->
+    </tbody>
+  </table>
+
+  <!-- 👇 Back Button (Added just above the script tag) -->
+  <div class="back-button">
+    <a href="index.html">← Back to Wallet</a>
+  </div>
+
+  <!-- 👇 JS for injecting leaderboard -->
+  <!-- Load Firestore leaderboard logic -->
+  <script type="module" src="leaderboard.js"></script>
+</body>
+</html>

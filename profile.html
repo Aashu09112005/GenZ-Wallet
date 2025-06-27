@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GenZ Wallet | Profile</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="header-left">
+      <img src="assets/icons/weblogo.jpg" class="logo" alt="Logo" />
+      <div class="brand-text">
+        <h1>GenZ Wallet</h1>
+        <p class="tagline">Your Eco Impact Summary</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="profile-summary">
+    <h2 id="profile-name">Your Name</h2>
+    <p>Email: <span id="profile-email">Loading...</span></p>
+    <p>Rank: <span id="profile-rank">🏅</span></p>
+    <p>Eco Points: <span id="profile-points">0</span></p>
+
+    <div class="eco-level-bar">
+      <div class="eco-level-fill" id="level-fill"></div>
+    </div>
+    <p id="eco-level-label">🌱 Level 1: Seedling</p>
+  </section>
+
+  <section class="badge-gallery">
+    <h3>🎖️ Badges Earned</h3>
+    <div class="badge-grid" id="badge-grid">
+      <!-- JS will insert badge emojis -->
+    </div>
+  </section>
+
+  <section class="activity-log">
+    <h3>📋 Your Eco Activity</h3>
+    <ul id="activity-list">
+      <!-- JS will fill eco purchases -->
+    </ul>
+  </section>
+
+  <footer>
+    <p>GenZ Wallet © 2025</p>
+  </footer>
+
+  <script type="module" src="profile.js"></script>
+</body>
+</html>
